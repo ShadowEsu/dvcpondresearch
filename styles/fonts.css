@@ -1,0 +1,55 @@
+/**
+ * DVC Pond Research — Google Fonts
+ *
+ * Import this file once in your global CSS or HTML:
+ *   <link rel="stylesheet" href="/styles/fonts.css" />
+ *
+ * Use the CSS variables on body, headings, and components.
+ * Swap --font-heading or --font-body to try alternate pairings below.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+
+:root {
+  /* --- Recommended default pairing (research / readable) --- */
+  --font-heading: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* --- Alternate headings (swap into --font-heading) --- */
+  --font-heading-dm-serif: "DM Serif Display", Georgia, serif;
+  --font-heading-libre: "Libre Baskerville", Georgia, serif;
+
+  /* --- Alternate body text (swap into --font-body) --- */
+  --font-body-inter: "Inter", system-ui, sans-serif;
+  --font-body-nunito: "Nunito Sans", system-ui, sans-serif;
+
+  /* --- Long-form / report-style body (optional for articles) --- */
+  --font-literata: "Literata", Georgia, serif;
+
+  /* Weights available from the import: see Google Fonts page if you add more axes */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* Optional: apply defaults when this sheet is loaded globally */
+body {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-regular);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+}
