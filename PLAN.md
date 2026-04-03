@@ -1,5 +1,9 @@
 # DVC Pond Research — Website Plan
 
+A condensed **project overview and planning summary** also lives in [`README.md`](./README.md) for the GitHub landing page. This file is the longer standalone plan.
+
+---
+
 A public-facing site for the **DVC MESA Pond Research** program: documenting field work, methods, and findings across the campus pond sites, with a tone that matches real research communication (clear, evidence-based, accessible).
 
 ---
