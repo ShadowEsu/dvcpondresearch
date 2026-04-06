@@ -1,11 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DVC MESA Pond Research — student research on campus pond habitats at Diablo Valley College.">
+  <title>DVC Pond Research</title>
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/site.css">
 </head>
 <body>
-    
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="site-brand" href="index.html">DVC Pond Research</a>
+      <nav class="site-nav" aria-label="Primary">
+        <!-- Add page links as you build them out -->
+        <a href="#about">About</a>
+        <a href="#ponds">Ponds</a>
+        <a href="#team">Team</a>
+        <a href="#resources">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <h1 id="hero-title" class="hero__title">Campus pond habitats, studied like real research</h1>
+        <p class="hero__tagline">
+          A <strong>MESA</strong>-run program at <strong>Diablo Valley College</strong> documenting field work,
+          methods, and findings across five pond sites—clear, evidence-based, and accessible.
+        </p>
+        <ul class="hero__meta">
+          <li>DVC · Pleasant Hill &amp; San Ramon</li>
+          <li>MESA STEM community</li>
+          <li>Ponds 0–4</li>
+        </ul>
+
+        <!--
+          Optional hero image: replace src with a web-sized photo (compress first; PNGs from phones are huge).
+          Example: <img src="images/hero-pond.webp" width="1200" height="675" alt="Campus pond at DVC">
+        -->
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="wrap wrap--narrow">
+        <h2 class="section__title">About the program</h2>
+        <p class="section__lead">
+          The public site will grow into a stable archive of figures, summaries, and links to deeper work—written for students,
+          faculty, and anyone who cares about pond health without a wall of jargon.
+        </p>
+        <ul class="checklist">
+          <li>Present the work as <strong>legitimate research</strong> through MESA.</li>
+          <li>Share <strong>what we study</strong>, <strong>how we study it</strong>, and <strong>what we have learned</strong>.</li>
+          <li>Make <strong>results and discoveries</strong> easy to browse (by pond, topic, or time).</li>
+          <li>Explain <strong>why habitat quality matters</strong> for organisms in and around each pond.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="ponds" class="section section--surface">
+      <div class="wrap">
+        <h2 class="section__title">Ponds under study</h2>
+        <p class="section__lead">
+          We compare and track <strong>five pond sites</strong>: <strong>Pond 0 through Pond 4</strong>. Each pond page can cover location,
+          habitat focus, measurements, results, and field notes.
+        </p>
+        <div class="card-grid" role="list">
+          <article class="card" role="listitem">
+            <h3 class="card__title">Pond 0</h3>
+            <p class="card__text">Location, habitat focus, methods, results—coming as pages go live.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3 class="card__title">Pond 1</h3>
+            <p class="card__text">Placeholder card; replace copy when you publish each pond page.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3 class="card__title">Pond 2</h3>
+            <p class="card__text">Placeholder card.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3 class="card__title">Pond 3</h3>
+            <p class="card__text">Placeholder card.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3 class="card__title">Pond 4</h3>
+            <p class="card__text">Placeholder card.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="section">
+      <div class="wrap wrap--narrow">
+        <h2 class="section__title">Team</h2>
+        <p class="section__lead">Bio team (edit names or order anytime in the HTML).</p>
+        <ul class="team-list">
+          <li>Brenda</li>
+          <li>Ariel</li>
+          <li>Ishak</li>
+          <li>Rita</li>
+          <li>Preston</li>
+        </ul>
+        <p class="section__lead u-mt-3 u-mb-0">
+          <strong>Contact:</strong>
+          <!-- TODO: replace with advisor or program email when approved for public use -->
+          <span class="text-muted">— add email or link here —</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="resources" class="section section--tight">
+      <div class="wrap wrap--narrow">
+        <h2 class="section__title">Reference &amp; context</h2>
+        <p class="section__lead">
+          Official program pages for the college and statewide MESA (University of California Office of the President).
+        </p>
+        <div class="link-row">
+          <a href="https://www.dvc.edu/" target="_blank" rel="noopener noreferrer">Diablo Valley College</a>
+          <a href="https://mesa.ucop.edu/" target="_blank" rel="noopener noreferrer">California MESA (UCOP)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap wrap--narrow">
+      <p class="u-m-0">
+        <strong>DVC Pond Research</strong> — student research on campus ponds.
+      </p>
+      <p class="site-footer__note">
+        Styled with variables in <code>styles/site.css</code> and fonts in <code>styles/fonts.css</code>.
+        Change colors and spacing under <code>:root</code> in <code>site.css</code> to retheme quickly.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>

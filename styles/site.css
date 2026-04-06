@@ -1,0 +1,359 @@
+/**
+ * DVC Pond Research — layout & theme
+ *
+ * Edit the :root block below to restyle the whole site. Fonts are in fonts.css.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Design tokens — change these first                                              */
+/* -------------------------------------------------------------------------- */
+:root {
+  /* Colors (nature + lab: greens, blues, warm neutrals) */
+  --color-bg: #f7f5f0;
+  --color-bg-elevated: #ffffff;
+  --color-text: #1c2420;
+  --color-text-muted: #4a5751;
+  --color-accent: #2d6a4f;
+  --color-accent-soft: #d8f3dc;
+  --color-accent-2: #1b4332;
+  --color-border: #e0dcd4;
+  --color-link: #1d6b5c;
+  --color-link-hover: #134a42;
+
+  /* Layout */
+  --max-width: 42rem;
+  --max-width-wide: 72rem;
+  --radius: 12px;
+  --header-height: 4rem;
+
+  /* Spacing scale (change --space-unit to scale everything) */
+  --space-unit: 0.25rem;
+  --space-1: calc(var(--space-unit) * 4);   /* 1rem */
+  --space-2: calc(var(--space-unit) * 6);   /* 1.5rem */
+  --space-3: calc(var(--space-unit) * 10);  /* 2.5rem */
+  --space-4: calc(var(--space-unit) * 16); /* 4rem */
+  --space-5: calc(var(--space-unit) * 24); /* 6rem */
+
+  /* Type scale (overrides optional; defaults come from fonts.css) */
+  --text-hero: clamp(2rem, 4vw, 2.75rem);
+  --text-lead: 1.2rem;
+  --text-small: 0.9375rem;
+
+  /* Effects */
+  --shadow-soft: 0 8px 30px rgba(28, 36, 32, 0.08);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Base                                                                          */
+/* -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Layout helpers                                                                */
+/* -------------------------------------------------------------------------- */
+.wrap {
+  width: min(100% - var(--space-2) * 2, var(--max-width-wide));
+  margin-inline: auto;
+}
+
+.wrap--narrow {
+  width: min(100% - var(--space-2) * 2, var(--max-width));
+}
+
+.section {
+  padding-block: var(--space-4);
+}
+
+.section--tight {
+  padding-block: var(--space-3);
+}
+
+.section--surface {
+  background: var(--color-bg-elevated);
+  border-block: 1px solid var(--color-border);
+}
+
+.u-mt-3 {
+  margin-top: var(--space-3);
+}
+
+.u-mb-0 {
+  margin-bottom: 0;
+}
+
+.u-m-0 {
+  margin: 0;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.section__title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-hero);
+  line-height: 1.15;
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-accent-2);
+}
+
+.section__lead {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-lead);
+  color: var(--color-text-muted);
+  max-width: 50ch;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Header                                                                        */
+/* -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  gap: var(--space-2);
+}
+
+.site-brand {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold, 600);
+  font-size: 1.05rem;
+  color: var(--color-accent-2);
+  text-decoration: none;
+}
+
+.site-brand:hover {
+  color: var(--color-accent);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  justify-content: flex-end;
+}
+
+.site-nav a {
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-medium, 500);
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.site-nav a:hover {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-2);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Hero                                                                          */
+/* -------------------------------------------------------------------------- */
+.hero {
+  padding-block: var(--space-5) var(--space-4);
+  background: linear-gradient(
+    165deg,
+    var(--color-accent-soft) 0%,
+    transparent 55%
+  );
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero__title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-hero);
+  line-height: 1.12;
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-accent-2);
+}
+
+.hero__tagline {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-lead);
+  color: var(--color-text-muted);
+  max-width: 52ch;
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+.hero__meta li {
+  padding: 0.35rem 0.75rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+}
+
+/* Optional hero image: set src in HTML; to hide, remove the <figure> or set display:none here */
+.hero__figure {
+  margin: var(--space-3) 0 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-border);
+}
+
+.hero__figure figcaption {
+  padding: var(--space-1);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+  background: var(--color-bg-elevated);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Cards & lists                                                                 */
+/* -------------------------------------------------------------------------- */
+.card-grid {
+  display: grid;
+  gap: var(--space-2);
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+.card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-2);
+  box-shadow: var(--shadow-soft);
+}
+
+.card__title {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  font-family: var(--font-heading);
+  color: var(--color-accent-2);
+}
+
+.card__text {
+  margin: 0;
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+.checklist {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.checklist li {
+  margin-bottom: 0.5rem;
+}
+
+.checklist li::marker {
+  color: var(--color-accent);
+}
+
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.team-list li {
+  padding: 0.4rem 0.85rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: var(--text-small);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Links row (reference sites)                                                   */
+/* -------------------------------------------------------------------------- */
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.link-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-elevated);
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  color: var(--color-accent-2);
+}
+
+.link-row a:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Footer                                                                        */
+/* -------------------------------------------------------------------------- */
+.site-footer {
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-bg-elevated) 88%, var(--color-accent-soft));
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+.site-footer a {
+  color: var(--color-link);
+}
+
+.site-footer__note {
+  margin: var(--space-2) 0 0;
+  font-size: 0.875rem;
+}

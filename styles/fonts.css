@@ -1,43 +1,40 @@
 /**
- * DVC Pond Research — Google Fonts
+ * DVC Pond Research — typography
  *
- * Import this file once in your global CSS or HTML:
- *   <link rel="stylesheet" href="/styles/fonts.css" />
- *
- * Use the CSS variables on body, headings, and components.
- * Swap --font-heading or --font-body to try alternate pairings below.
+ * HOW TO CHANGE FONTS
+ * -------------------
+ * 1. Pick fonts on Google Fonts and update the @import URL below (only load what you use).
+ * 2. Set --font-heading and --font-body in :root to your choices.
+ * 3. Optional: adjust --text-hero / --text-lead in site.css for sizes.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+/* Only fonts used on the home page (add axes to the URL if you need more weights) */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap");
 
 :root {
-  /* --- Recommended default pairing (research / readable) --- */
+  /* Active fonts — swap these strings to change the look site-wide */
   --font-heading: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-body: "Source Sans 3", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-body: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
 
-  /* --- Alternate headings (swap into --font-heading) --- */
-  --font-heading-dm-serif: "DM Serif Display", Georgia, serif;
-  --font-heading-libre: "Libre Baskerville", Georgia, serif;
-
-  /* --- Alternate body text (swap into --font-body) --- */
-  --font-body-inter: "Inter", system-ui, sans-serif;
-  --font-body-nunito: "Nunito Sans", system-ui, sans-serif;
-
-  /* --- Long-form / report-style body (optional for articles) --- */
-  --font-literata: "Literata", Georgia, serif;
-
-  /* Weights available from the import: see Google Fonts page if you add more axes */
+  /* Weights (match what you import above) */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+
+  /* Optional type scale — use in site.css or components */
+  --text-step--1: 0.9375rem;
+  --text-step-0: 1rem;
+  --text-step-1: 1.125rem;
+  --text-step-2: 1.35rem;
+  --text-step-3: 1.75rem;
 }
 
-/* Optional: apply defaults when this sheet is loaded globally */
 body {
   font-family: var(--font-body);
   font-weight: var(--font-weight-regular);
+  font-size: var(--text-step-0);
 }
 
 h1,
