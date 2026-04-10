@@ -59,7 +59,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -67,28 +67,6 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   line-height: 1.65;
-}
-
-/* Scroll-triggered fade-up (see scripts/site.js) */
-[data-reveal] {
-  opacity: 0;
-  transform: translate3d(0, 14px, 0);
-  transition:
-    opacity 0.85s var(--ease-out),
-    transform 0.85s var(--ease-out);
-}
-
-[data-reveal].is-revealed {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-reveal] {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
 }
 
 code {
