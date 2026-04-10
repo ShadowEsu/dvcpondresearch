@@ -8,23 +8,27 @@
 /* Design tokens — change these first                                              */
 /* -------------------------------------------------------------------------- */
 :root {
-  /* Colors (nature + lab: greens, blues, warm neutrals) */
-  --color-bg: #f7f5f0;
+  /*
+   * Editorial light field (research-institute style: calm neutrals, one accent).
+   * Adjust --color-accent / --color-link together if you shift the brand hue.
+   */
+  --color-bg: #f5f4f0;
+  --color-bg-deep: #ebe9e3;
   --color-bg-elevated: #ffffff;
-  --color-text: #1c2420;
-  --color-text-muted: #4a5751;
-  --color-accent: #2d6a4f;
-  --color-accent-soft: #d8f3dc;
-  --color-accent-2: #1b4332;
-  --color-border: #e0dcd4;
-  --color-link: #1d6b5c;
-  --color-link-hover: #134a42;
+  --color-text: #1a1a18;
+  --color-text-muted: #5c5c57;
+  --color-accent: #1a5c54;
+  --color-accent-soft: rgba(26, 92, 84, 0.07);
+  --color-accent-2: #143d38;
+  --color-border: #d9d6cf;
+  --color-link: #145a50;
+  --color-link-hover: #0c3832;
 
   /* Layout */
   --max-width: 46rem;
   --max-width-prose: 40rem;
   --max-width-wide: 72rem;
-  --radius: 12px;
+  --radius: 3px;
   --header-height: 4rem;
 
   /* Spacing scale (change --space-unit to scale everything) */
@@ -32,16 +36,17 @@
   --space-1: calc(var(--space-unit) * 4);   /* 1rem */
   --space-2: calc(var(--space-unit) * 6);   /* 1.5rem */
   --space-3: calc(var(--space-unit) * 10);  /* 2.5rem */
-  --space-4: calc(var(--space-unit) * 16); /* 4rem */
-  --space-5: calc(var(--space-unit) * 24); /* 6rem */
+  --space-4: calc(var(--space-unit) * 17); /* 4.25rem */
+  --space-5: calc(var(--space-unit) * 26); /* 6.5rem */
 
-  /* Type scale (overrides optional; defaults come from fonts.css) */
-  --text-hero: clamp(2rem, 4vw, 2.75rem);
-  --text-lead: 1.2rem;
+  /* Type scale */
+  --text-hero: clamp(2rem, 3.6vw, 2.65rem);
+  --text-lead: 1.25rem;
   --text-small: 0.9375rem;
 
   /* Effects */
-  --shadow-soft: 0 8px 30px rgba(28, 36, 32, 0.08);
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -61,7 +66,38 @@ body {
   margin: 0;
   color: var(--color-text);
   background: var(--color-bg);
-  line-height: 1.6;
+  line-height: 1.65;
+}
+
+/* Scroll-triggered fade-up (see scripts/site.js) */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition:
+    opacity 0.85s var(--ease-out),
+    transform 0.85s var(--ease-out);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+code {
+  font-size: 0.9em;
+  padding: 0.12em 0.4em;
+  border-radius: 2px;
+  background: var(--color-bg-deep);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
 }
 
 img {
@@ -118,7 +154,7 @@ a:hover {
 
 .prose h3 {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--color-accent-2);
   margin: var(--space-3) 0 var(--space-1);
 }
@@ -146,11 +182,11 @@ a:hover {
 
 .section-kicker {
   display: block;
-  font-size: var(--text-small);
+  font-size: 0.8125rem;
   font-weight: var(--font-weight-semibold, 600);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-text-muted);
   margin-bottom: var(--space-1);
 }
 
@@ -160,7 +196,7 @@ a:hover {
   text-align: left;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
-  background: color-mix(in srgb, var(--color-accent-soft) 55%, var(--color-bg-elevated));
+  background: var(--color-bg-deep);
   font-size: var(--text-small);
 }
 
@@ -230,8 +266,29 @@ a:hover {
   margin-inline: auto;
 }
 
-.team-list--center {
-  justify-content: center;
+/* Team — simple roster (no chips / bubbles) */
+.team-roster {
+  list-style: none;
+  margin: var(--space-3) auto 0;
+  padding: 0;
+  max-width: 22rem;
+  text-align: left;
+  border-top: 1px solid var(--color-border);
+}
+
+.team-roster li {
+  margin: 0;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 1.0625rem;
+  font-weight: var(--font-weight-medium, 500);
+  letter-spacing: 0.01em;
+}
+
+.team-contact {
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-lead);
+  color: var(--color-text);
 }
 
 .link-row--center {
@@ -245,8 +302,8 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
-  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--color-bg) 94%, #fff);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -272,18 +329,18 @@ a:hover {
   font-family: var(--font-heading);
   font-weight: var(--font-weight-semibold, 600);
   font-size: 1.05rem;
-  color: var(--color-accent-2);
+  color: var(--color-text);
   text-decoration: none;
 }
 
 .site-brand:hover {
-  color: var(--color-accent);
+  color: var(--color-link);
 }
 
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-1);
+  gap: 0.65rem 1.1rem;
   justify-content: center;
 }
 
@@ -296,15 +353,15 @@ a:hover {
 .site-nav a {
   font-size: var(--text-small);
   font-weight: var(--font-weight-medium, 500);
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
+  padding: 0.35rem 0;
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-text-muted);
+  border-bottom: 1px solid transparent;
 }
 
 .site-nav a:hover {
-  background: var(--color-accent-soft);
-  color: var(--color-accent-2);
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -312,11 +369,7 @@ a:hover {
 /* -------------------------------------------------------------------------- */
 .hero {
   padding-block: var(--space-5) var(--space-4);
-  background: linear-gradient(
-    165deg,
-    var(--color-accent-soft) 0%,
-    transparent 55%
-  );
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
   text-align: center;
 }
@@ -337,22 +390,13 @@ a:hover {
 }
 
 .hero__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1);
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  margin: var(--space-3) auto 0;
+  padding: var(--space-2) 0 0;
+  border-top: 1px solid var(--color-border);
+  max-width: 42rem;
   font-size: var(--text-small);
+  letter-spacing: 0.02em;
   color: var(--color-text-muted);
-  justify-content: center;
-}
-
-.hero__meta li {
-  padding: 0.35rem 0.75rem;
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
 }
 
 /* Optional hero image: set src in HTML; to hide, remove the <figure> or set display:none here */
@@ -387,6 +431,11 @@ a:hover {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.35s var(--ease-out);
+}
+
+.photo-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .photo-card img {
@@ -446,7 +495,7 @@ a:hover {
 .meetings-intro {
   margin-inline: auto;
   max-width: 52ch;
-  font-size: var(--text-small);
+  font-size: var(--text-step-1, 1.125rem);
   color: var(--color-text-muted);
 }
 
@@ -460,7 +509,7 @@ a:hover {
   border-radius: var(--radius);
   margin-bottom: var(--space-2);
   background: var(--color-bg-elevated);
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
 }
 
 .accordion__item summary {
@@ -469,7 +518,7 @@ a:hover {
   padding: var(--space-2) var(--space-2);
   font-family: var(--font-heading);
   font-weight: var(--font-weight-semibold, 600);
-  font-size: 1.05rem;
+  font-size: var(--text-step-2, 1.2rem);
   color: var(--color-accent-2);
   display: flex;
   flex-wrap: wrap;
@@ -496,7 +545,7 @@ a:hover {
 
 .accordion__item[open] summary {
   border-bottom: 1px solid var(--color-border);
-  background: color-mix(in srgb, var(--color-accent-soft) 40%, var(--color-bg-elevated));
+  background: var(--color-bg-deep);
 }
 
 .accordion__date {
@@ -547,19 +596,19 @@ a:hover {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: var(--space-2);
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
 }
 
 .card__title {
   margin: 0 0 0.35rem;
-  font-size: 1.1rem;
+  font-size: var(--text-step-2, 1.2rem);
   font-family: var(--font-heading);
   color: var(--color-accent-2);
 }
 
 .card__text {
   margin: 0;
-  font-size: var(--text-small);
+  font-size: var(--text-step-1, 1.125rem);
   color: var(--color-text-muted);
 }
 
@@ -576,49 +625,28 @@ a:hover {
   color: var(--color-accent);
 }
 
-.team-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1);
-  margin: var(--space-2) 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.team-list li {
-  padding: 0.4rem 0.85rem;
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  font-size: var(--text-small);
-}
-
 /* -------------------------------------------------------------------------- */
 /* Links row (reference sites)                                                   */
 /* -------------------------------------------------------------------------- */
 .link-row {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-1);
+  gap: 0.5rem 1.25rem;
+  justify-content: center;
+  align-items: baseline;
 }
 
 .link-row a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.5rem 0.9rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--color-border);
-  background: var(--color-bg-elevated);
-  font-size: var(--text-small);
+  font-size: var(--text-lead);
   font-weight: var(--font-weight-medium, 500);
   text-decoration: none;
-  color: var(--color-accent-2);
+  color: var(--color-link);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-link) 35%, transparent);
 }
 
 .link-row a:hover {
-  border-color: var(--color-accent);
-  background: var(--color-accent-soft);
+  color: var(--color-link-hover);
+  border-bottom-color: var(--color-link-hover);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -627,7 +655,7 @@ a:hover {
 .site-footer {
   padding-block: var(--space-4);
   border-top: 1px solid var(--color-border);
-  background: color-mix(in srgb, var(--color-bg-elevated) 88%, var(--color-accent-soft));
+  background: var(--color-bg-deep);
   font-size: var(--text-small);
   color: var(--color-text-muted);
 }
