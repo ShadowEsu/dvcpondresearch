@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <!--
   Content map — edit wording in place:
-  Hero: .hero  |  About: #about  |  Photos: #photos (.photo-grid)
-  Meetings: #meetings (each <details class="accordion__item">)
-  Ponds: #ponds (.card)  |  Team: #team (.team-roster)  |  Resources: #resources
+  Hero: .hero  |  About: #about  |  Methods: #methods  |  Engineering / incubator: #build (.build-info, .build-grid)
+  Ponds: #ponds (.pond-card)  |  Meetings: #meetings (each <details class="accordion__item">)
+  Lab photos: #photos (.photo-grid)  |  Team: #team (.team-roster)  |  Resources: #resources
   Global colors & spacing: styles/site.css (:root)  |  Fonts: styles/fonts.css
+  Photos: compressed JPEGs in assets/photos/ (location metadata stripped); keep phone originals outside Git.
 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DVC MESA Pond Research — notes, measurements, and lab documentation for campus pond sites at Diablo Valley College.">
-  <title>DVC Pond Research</title>
+  <title>DVC Pond Research — MESA student research at Diablo Valley College</title>
+  <meta name="description" content="DVC Pond Research is a MESA student research project at Diablo Valley College studying campus ponds 0–4: water chemistry, lab plates, a temperature-controlled incubator build, and dated meeting notes.">
+  <meta name="theme-color" content="#143d38">
+  <link rel="canonical" href="https://shadowesu.github.io/dvcpondresearch/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DVC Pond Research">
+  <meta property="og:title" content="DVC Pond Research">
+  <meta property="og:description" content="How can campus ponds be made more habitable for the organisms that live there? A MESA student research project at Diablo Valley College.">
+  <meta property="og:url" content="https://shadowesu.github.io/dvcpondresearch/">
+  <meta property="og:image" content="https://shadowesu.github.io/dvcpondresearch/assets/photos/build-jumper-bundle.jpg">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:image:alt" content="Hands holding a bundle of rainbow jumper wires at the incubator build table.">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="styles/fonts.css">
   <link rel="stylesheet" href="styles/site.css">
 </head>
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
   <header class="site-header">
     <div class="wrap site-header__inner">
-      <a class="site-brand" href="index.html">DVC Pond Research</a>
-      <nav class="site-nav" aria-label="Primary">
+      <a class="site-brand" href="#top" aria-label="DVC Pond Research, back to top">
+        <img class="site-brand__mark" src="favicon.svg" width="28" height="28" alt="">
+        <span class="site-brand__text">
+          <span class="site-brand__name">DVC Pond Research</span>
+          <span class="site-brand__sub">MESA · Diablo Valley College</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Sections">
         <a href="#about">About</a>
-        <a href="#photos">Photos</a>
-        <a href="#meetings">Meeting notes</a>
+        <a href="#methods">Methods</a>
+        <a href="#build">Incubator</a>
         <a href="#ponds">Ponds</a>
+        <a href="#meetings">Meetings</a>
+        <a href="#photos">Photos</a>
         <a href="#team">Team</a>
         <a href="#resources">Resources</a>
       </nav>
@@ -31,113 +57,320 @@
   </header>
 
   <main id="content">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap">
-        <h1 id="hero-title" class="hero__title">Campus pond habitats, measured like a real study</h1>
-        <p class="hero__tagline">
-          A <strong>MESA</strong> research thread at <strong>Diablo Valley College</strong>: pond conditions, weather, water chemistry,
-          and lab follow-up—documented clearly so we can compare sites and improve methods over time.
-        </p>
-        <p class="hero__meta">DVC · Pleasant Hill &amp; San Ramon · Ponds 0–4 · Field notes + lab plates</p>
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">Student research · DVC MESA program</p>
+          <h1 id="hero-title" class="hero__title">How can campus ponds be made more habitable for the organisms that live there?</h1>
+          <p class="hero__tagline">
+            A <strong>MESA</strong> research thread at <strong>Diablo Valley College</strong>: pond conditions, weather, water chemistry,
+            and lab follow-up, documented clearly so we can compare sites and improve methods over time.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#meetings">Read the meeting notes</a>
+            <a class="button" href="#build">See the incubator build</a>
+          </div>
+          <dl class="facts">
+            <div class="facts__item">
+              <dt>Sites</dt>
+              <dd>Ponds 0–4</dd>
+            </div>
+            <div class="facts__item">
+              <dt>Meetings held</dt>
+              <dd>9 <span class="facts__note">Oct 10, 2025 – Oct 30, 2026</span></dd>
+            </div>
+            <div class="facts__item">
+              <dt>Campus</dt>
+              <dd>Pleasant Hill &amp; San Ramon</dd>
+            </div>
+            <div class="facts__item">
+              <dt>Record</dt>
+              <dd>Field notes + lab plates</dd>
+            </div>
+          </dl>
+        </div>
+        <figure class="hero__figure">
+          <img
+            src="assets/photos/build-team-wiring.jpg"
+            width="1200"
+            height="1180"
+            fetchpriority="high"
+            alt="Hands holding a small component over a table with a breadboard, a blue display module, USB cables, and a foil-covered panel with heating pads."
+          >
+          <figcaption>Wiring the incubator's sensor and display electronics, Oct 30, 2026.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section id="about" class="section section--center">
-      <div class="wrap wrap--narrow">
-        <h2 class="section__title">About the program</h2>
-        <p class="section__lead">
-          This page is a working snapshot: what we are measuring, what heavy rain might do to small ponds,
-          and what we want to test next. Long term, the site can grow into a fuller archive—similar in spirit
-          to how research institutes explain <em>why</em> each system matters (see
-          <a href="https://www.stowers.org/organisms">Stowers Institute — Organisms</a> as an example of that storytelling style).
-        </p>
-      </div>
-      <div class="wrap wrap--prose prose">
-        <ul class="checklist">
-          <li>Share <strong>what we study</strong>, <strong>how we study it</strong>, and <strong>what we have learned</strong>.</li>
-          <li>Track <strong>results</strong> in a way we can compare across ponds and dates.</li>
-          <li>Keep methods <strong>honest</strong>: when something is a hypothesis, we say so.</li>
-        </ul>
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="wrap split">
+        <div class="split__head">
+          <p class="eyebrow">01 · About</p>
+          <h2 id="about-title" class="section__title">About the program</h2>
+        </div>
+        <div class="split__body prose">
+          <p class="section__lead">
+            This page is a working snapshot: what we are measuring, what heavy rain might do to small ponds,
+            and what we want to test next. Long term, the site can grow into a fuller archive, similar in spirit
+            to how research institutes explain <em>why</em> each system matters (see
+            <a href="https://www.stowers.org/organisms">Stowers Institute — Organisms</a> as an example of that storytelling style).
+          </p>
+          <ul class="checklist">
+            <li>Share <strong>what we study</strong>, <strong>how we study it</strong>, and <strong>what we have learned</strong>.</li>
+            <li>Track <strong>results</strong> in a way we can compare across ponds and dates.</li>
+            <li>Keep methods <strong>honest</strong>: when something is a hypothesis, we say so.</li>
+          </ul>
+          <!-- TODO(Preston): name the faculty / MESA advisor who approves public copy, if they want to be listed. -->
+        </div>
       </div>
     </section>
 
-    <section id="photos" class="section section--surface section--center">
+    <section id="methods" class="section section--surface" aria-labelledby="methods-title">
       <div class="wrap">
-        <span class="section-kicker">Documentation</span>
-        <h2 class="section__title">What we have been doing (photos)</h2>
-        <p class="section__lead section__lead--center">
-          Lab documentation from plate setups and incubation labels. Image timestamps group on
-          <strong class="metric">April 2–3, 2026</strong> (local time) for this batch; filenames are the phone originals.
-        </p>
-        <div class="photo-grid">
-          <figure class="photo-card">
-            <img
-              src="assets/photos/plate-grid.jpg"
-              width="800"
-              height="600"
-              loading="lazy"
-              alt="Several sealed petri dishes on a lab bench with handwritten labels including room temperature and trial numbers."
-            >
-            <figcaption>
-              <strong>Plate grid — membrane / filter comparison</strong>
-              Room temp series and trial labels on one bench. <span class="metric">Apr 2–3, 2026</span>
-            </figcaption>
+        <div class="section__head">
+          <p class="eyebrow">02 · Methods</p>
+          <h2 id="methods-title" class="section__title">How we study the ponds</h2>
+          <p class="section__lead">
+            Methods are taken from our meeting notes. Each one links back to the meeting where it was discussed.
+          </p>
+        </div>
+        <div class="method-grid">
+          <article class="method">
+            <h3 class="method__title">Water chemistry</h3>
+            <p>Parameters tracked across ponds: pH, KH and alkalinity, hardness, calcium, nitrate, nitrite, ammonia, chlorine, copper and lead, and temperature.</p>
+            <p>Next steps from the notes: calibrate the pH strips, and stop routine testing for anything that reads zero at every pond (copper, lead, carbonate, ammonium nitrogen).</p>
+            <p class="method__source">Notes: <a href="#m-2025-10-17">Oct 17</a>, <a href="#m-2025-11-18">Nov 18, 2025</a></p>
+          </article>
+          <article class="method">
+            <h3 class="method__title">Solids (TS, TSS, TDS)</h3>
+            <p><span class="metric">TS = TSS + TDS</span>. TSS is calculated from filter mass (mg) per sample volume (L); total solids are measured in an evaporating dish, and the notes call for a larger sample.</p>
+            <p>Open issue: some filters weighed more after drying than before, giving negative mass. We are troubleshooting the procedure.</p>
+            <p class="method__source">Notes: <a href="#m-2025-11-14">Nov 14</a>, <a href="#m-2025-12-17">Dec 17, 2025</a></p>
+          </article>
+          <article class="method">
+            <h3 class="method__title">Bacterial cultures</h3>
+            <p>Agar and blood agar plates, incubated at room temperature and at 30&nbsp;°C, with numbered replicates labeled by hand.</p>
+            <p class="method__source">Notes: <a href="#m-2025-11-07">Nov 7, 2025</a> · <a href="#photos">Lab photos</a></p>
+          </article>
+          <article class="method">
+            <h3 class="method__title">Engineering: incubator</h3>
+            <p>A temperature-controlled incubator built by the engineering team: a styrofoam cooler with heating pads, TMP36 temperature sensors, an OLED display, and an Arduino Nano.</p>
+            <p class="method__source">Notes: <a href="#m-2026-10-16">Oct 16</a>, <a href="#m-2026-10-30">Oct 30, 2026</a> · <a href="#build">Parts and photos</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="build" class="section" aria-labelledby="build-title">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">03 · Engineering</p>
+          <h2 id="build-title" class="section__title">Engineering: a temperature-controlled incubator</h2>
+          <p class="section__lead">
+            The engineering team is building a temperature-controlled incubator for the pond work: a styrofoam cooler
+            warmed by heating pads, with temperature sensors, a display, and knobs to set the temperature.
+          </p>
+        </div>
+        <div class="build-info">
+          <article class="method">
+            <h3 class="method__title">Parts</h3>
+            <ul>
+              <li>Styrofoam box / cooler as the body</li>
+              <li>2 heating pads per box, switched by a 5V relay</li>
+              <li>TMP36 analog temperature sensors</li>
+              <li>2.42-inch OLED display</li>
+              <li>Arduino Nano running the sensor and display code</li>
+              <li>Rotary knobs to set the temperature</li>
+              <li>Breadboards and jumper wires</li>
+            </ul>
+            <p class="method__source">From the team's parts list</p>
+          </article>
+          <article class="method">
+            <h3 class="method__title">Status</h3>
+            <ul>
+              <li><strong>Oct 16, 2026:</strong> supplies processed; sensor and display code loaded and troubleshot; wiring tested. <a href="#m-2026-10-16">Notes</a></li>
+              <li><strong>Oct 19–20:</strong> rotary knobs arrived; knob calibration still open.</li>
+              <li><strong>Oct 30, 2026:</strong> remaining supplies, including the heating pads, arrived; building started. <a href="#m-2026-10-30">Notes</a></li>
+            </ul>
+            <p class="method__source">Next: mount parts in the cooler and lid, pick screws and washers, try hot glue.</p>
+          </article>
+          <article class="method">
+            <h3 class="method__title">Plans</h3>
+            <p>Most parts were ordered in multiples, so the extra parts will become a second incubator: one for the team, and one DVC MESA pond-project incubator to give to the biology department.</p>
+            <p>A separate proof-of-concept data logger, meant to be left by the water, also exists.</p>
+            <!-- TODO(Preston): link the incubator code and a wiring diagram when ready. -->
+          </article>
+        </div>
+        <h3 class="build-photos__title">Build photos, Oct 30, 2026</h3>
+        <div class="build-grid">
+          <figure class="shot">
+            <a href="assets/photos/build-heating-panel.jpg">
+              <img src="assets/photos/build-heating-panel.jpg" width="1200" height="1600" loading="lazy"
+                alt="A board covered in aluminum foil and edged with black tape, with two amber Kapton heating pads taped on and red and black wire leads.">
+            </a>
+            <figcaption><strong>Heating panel</strong> The incubator's heating panel: two Kapton heating pads on a foil-lined board.</figcaption>
           </figure>
-          <figure class="photo-card">
-            <img
-              src="assets/photos/blood-agar-room-temp.jpg"
-              width="800"
-              height="600"
-              loading="lazy"
-              alt="Five blood agar petri dishes with handwritten room temperature labels on a dark surface."
-            >
-            <figcaption>
-              <strong>Blood agar — room temperature set</strong>
-              Numbered replicates for room-temp incubation. <span class="metric">Apr 2–3, 2026</span>
-            </figcaption>
+          <figure class="shot">
+            <a href="assets/photos/build-breadboard-jumpers.jpg">
+              <img src="assets/photos/build-breadboard-jumpers.jpg" width="1200" height="1600" loading="lazy"
+                alt="An Arduino-style board seated on a small white breadboard, with bundles of rainbow jumper wires, a blue USB cable, and a blue display module on a white table.">
+            </a>
+            <figcaption><strong>Sensor and display electronics</strong> Arduino Nano on a breadboard, with jumper wires, a USB cable, and the display module.</figcaption>
           </figure>
-          <figure class="photo-card">
-            <img
-              src="assets/photos/single-plate-30c.jpg"
-              width="800"
-              height="600"
-              loading="lazy"
-              alt="Single petri dish with pale medium and handwritten temperature and replicate number on the lid."
-            >
-            <figcaption>
-              <strong>Single plate — 30 °C series</strong>
-              Close-up for one replicate in the warm set. <span class="metric">Apr 2–3, 2026</span>
-            </figcaption>
+          <figure class="shot shot--wide">
+            <a href="assets/photos/build-jumper-bundle.jpg">
+              <img src="assets/photos/build-jumper-bundle.jpg" width="1600" height="1200" loading="lazy"
+                alt="Close-up of hands holding a bundle of rainbow jumper wires; the foil panel with a heating pad and a small blue module sits on the table behind.">
+            </a>
+            <figcaption><strong>Wiring</strong> Sorting jumper wires for the incubator electronics, with the heating panel in the background.</figcaption>
           </figure>
-          <figure class="photo-card">
-            <img
-              src="assets/photos/held-plate-room.jpg"
-              width="800"
-              height="600"
-              loading="lazy"
-              alt="Gloved hand holding a blood agar plate with room temperature label over a phone."
-            >
-            <figcaption>
-              <strong>Held plate — room replicate</strong>
-              Documentation shot for labels and medium. <span class="metric">Apr 2–3, 2026</span>
-            </figcaption>
+          <figure class="shot">
+            <a href="assets/photos/build-team-wiring-2.jpg">
+              <img src="assets/photos/build-team-wiring-2.jpg" width="1200" height="1180" loading="lazy"
+                alt="Hands wiring at a table with breadboards, a blue display module, USB cables, and the foil-covered heating panel.">
+            </a>
+            <figcaption><strong>Build session</strong> Wiring the incubator electronics, alongside the biology team.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="assets/photos/build-display-wiring.jpg">
+              <img src="assets/photos/build-display-wiring.jpg" width="1200" height="1600" loading="lazy"
+                alt="Hands working with a blue display module wired by jumper leads, next to a laptop, loose components, and parts in a clear plastic bin.">
+            </a>
+            <figcaption><strong>Display hookup</strong> The incubator's OLED display wired with jumper leads.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="assets/photos/build-bench-overview.jpg">
+              <img src="assets/photos/build-bench-overview.jpg" width="1200" height="1600" loading="lazy"
+                alt="Overhead view of the build table: the foil heating panel, a small blue module, a display, a breadboard with a board, a USB cable, and packaged parts in a clear bin.">
+            </a>
+            <figcaption><strong>The build table</strong> Heating panel, electronics, and newly arrived parts still in their packaging.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="assets/photos/build-bench-overview-2.jpg">
+              <img src="assets/photos/build-bench-overview-2.jpg" width="1200" height="1600" loading="lazy"
+                alt="A second view of the build table as one person places a small black component on the foil heating panel.">
+            </a>
+            <figcaption><strong>Second angle</strong> A small component being placed on the heating panel.</figcaption>
           </figure>
         </div>
-        <p class="text-muted text-center u-mt-2 u-mx-auto text-small-max">
-          Photos are compressed JPEGs in <code>assets/photos/</code> for the web; keep full-resolution phone originals outside Git if you archive them.
-        </p>
       </div>
     </section>
 
-    <section id="meetings" class="section section--center" aria-labelledby="meetings-title">
-      <div class="wrap wrap--narrow">
-        <span class="section-kicker">Notebook</span>
-        <h2 id="meetings-title" class="section__title">Meeting notes</h2>
-        <p class="section__lead">Click a date to expand. Newest meetings are listed first.</p>
-        <p class="meetings-intro u-mb-0">Summaries from team discussions—edit text in <code>index.html</code> under each <code>&lt;details&gt;</code> block.</p>
+    <section id="ponds" class="section section--surface" aria-labelledby="ponds-title">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">04 · Sites</p>
+          <h2 id="ponds-title" class="section__title">Ponds under study</h2>
+          <p class="section__lead">
+            Five sites: <strong>Pond 0</strong> through <strong>Pond 4</strong>. Observations below come straight from the meeting notes;
+            each pond can eventually get its own page with location, habitat focus, methods, results, and dated notes.
+          </p>
+        </div>
+        <ol class="pond-grid">
+          <li class="pond-card">
+            <h3 class="pond-card__title"><span class="pond-card__num">0</span> Pond 0</h3>
+            <ul class="pond-card__notes">
+              <li>TDS read higher than Ponds 1 and 2; sampling location may matter. <a href="#m-2025-11-14">Nov 14</a></li>
+              <li>Nitrate rose from 0 to 10. <a href="#m-2025-11-14">Nov 14</a></li>
+            </ul>
+          </li>
+          <li class="pond-card">
+            <h3 class="pond-card__title"><span class="pond-card__num">1</span> Pond 1</h3>
+            <ul class="pond-card__notes">
+              <li>TDS lower than Pond 0 and higher than Pond 2. <a href="#m-2025-11-14">Nov 14</a></li>
+              <li>Part of the open question of flow from Pond 0 → 1 → 2. <a href="#m-2025-11-18">Nov 18</a></li>
+            </ul>
+          </li>
+          <li class="pond-card">
+            <h3 class="pond-card__title"><span class="pond-card__num">2</span> Pond 2</h3>
+            <ul class="pond-card__notes">
+              <li>Only pond with a detectable calcium value. <a href="#m-2025-11-14">Nov 14</a></li>
+              <li>Bubbles and murkiness in photos; a chlorine reading flagged for retest. <a href="#m-2025-11-18">Nov 18</a></li>
+            </ul>
+          </li>
+          <li class="pond-card">
+            <h3 class="pond-card__title"><span class="pond-card__num">3</span> Pond 3</h3>
+            <ul class="pond-card__notes">
+              <li>Highest TDS of the ponds compared. <a href="#m-2025-11-14">Nov 14</a></li>
+              <li>Alkalinity <span class="metric">40</span> vs <span class="metric">80</span> at the others in the recent table. <a href="#m-2025-11-18">Nov 18</a></li>
+            </ul>
+          </li>
+          <li class="pond-card pond-card--empty">
+            <h3 class="pond-card__title"><span class="pond-card__num">4</span> Pond 4</h3>
+            <p class="pond-card__empty">No observations logged in the notes yet.</p>
+            <!-- TODO(Preston): add Pond 4 location/context and first measurements. -->
+          </li>
+        </ol>
+        <!-- TODO(Preston): per-pond location/context (which pond is the "big pond" built ~1970s, which is the small shaded one). -->
       </div>
+    </section>
 
-      <div class="wrap wrap--prose accordion">
+    <section id="meetings" class="section" aria-labelledby="meetings-title">
+      <div class="wrap split">
+        <div class="split__head">
+          <p class="eyebrow">05 · Notebook</p>
+          <h2 id="meetings-title" class="section__title">Meeting notes</h2>
+          <p class="section__sub">Summaries from team discussions, newest first. Select a date to expand.</p>
+          <!-- Edit meeting text below under each <details> block. -->
+        </div>
+
+      <div class="split__body accordion">
+
+        <details class="accordion__item" id="m-2026-10-30" open>
+          <summary>
+            <span>Engineering — incubator build session</span>
+            <span class="accordion__date">Oct 30, 2026</span>
+          </summary>
+          <div class="accordion__body prose">
+            <p>
+              The remaining supplies, including the heating pads, arrived, and the engineering team started building the
+              <a href="#build">incubator</a>, working alongside the biology team.
+            </p>
+            <ul>
+              <li><strong>Heating panel:</strong> two Kapton heating pads on a foil-lined board edged in black tape, with their red/black leads.</li>
+              <li><strong>Sensor and display electronics:</strong> an Arduino Nano on a mini breadboard, wired with jumper wires to the OLED display.</li>
+              <li><strong>Wiring:</strong> bundles of rainbow jumper wires and USB cables sorted at the table.</li>
+            </ul>
+            <div class="notes-shots">
+              <a href="#build"><img src="assets/photos/build-heating-panel.jpg" width="1200" height="1600" loading="lazy" alt="The incubator's heating panel: two Kapton heating pads on a foil-lined board."></a>
+              <a href="#build"><img src="assets/photos/build-breadboard-jumpers.jpg" width="1200" height="1600" loading="lazy" alt="The incubator's board on a breadboard with jumper wires and the display module."></a>
+              <a href="#build"><img src="assets/photos/build-team-wiring-2.jpg" width="1200" height="1180" loading="lazy" alt="Hands wiring the incubator electronics at the build table."></a>
+              <a href="#build"><img src="assets/photos/build-display-wiring.jpg" width="1200" height="1600" loading="lazy" alt="The incubator's display module wired with jumper leads next to a laptop."></a>
+            </div>
+            <p><a href="#build">All build photos and the parts list</a></p>
+          </div>
+        </details>
+
+        <details class="accordion__item" id="m-2026-10-23">
+          <summary>
+            <span>Engineering — meeting skipped</span>
+            <span class="accordion__date">Oct 23, 2026</span>
+          </summary>
+          <div class="accordion__body prose">
+            <p>No engineering meeting this week: several members were at a hackathon. The team reconvened on Oct 30, 2026.</p>
+          </div>
+        </details>
+
+        <details class="accordion__item" id="m-2026-10-16">
+          <summary>
+            <span>Engineering — supplies, code, and wiring tests</span>
+            <span class="accordion__date">Oct 16, 2026</span>
+          </summary>
+          <div class="accordion__body prose">
+            <h3>Session</h3>
+            <ul>
+              <li>Itemized and processed the newly delivered supplies.</li>
+              <li>Loaded and troubleshot the code that runs the temperature sensors and the display.</li>
+              <li>Tested the wiring and where each component should sit.</li>
+              <li><strong>Still missing:</strong> the heating pads and the 5V relay.</li>
+            </ul>
+            <h3>Follow-up (Oct 19–20)</h3>
+            <ul>
+              <li>The rotary knobs arrived. Open question: how to calibrate them, i.e. how many degrees one turn should change the set temperature.</li>
+              <li>Planned next steps: place the parts in the styrofoam cooler, attach components to the lid, choose screw and washer sizes, and try hot glue.</li>
+            </ul>
+          </div>
+        </details>
 
         <details class="accordion__item" id="m-2025-12-17">
           <summary>
@@ -368,80 +601,156 @@
         </details>
 
       </div>
+      </div>
     </section>
-    <section id="ponds" class="section section--surface section--center">
+
+    <section id="photos" class="section section--surface" aria-labelledby="photos-title">
       <div class="wrap">
-        <h2 class="section__title">Ponds under study</h2>
-        <p class="section__lead section__lead--center">
-          Five sites: <strong>Pond 0</strong> through <strong>Pond 4</strong>. Each can eventually get its own page: location, habitat focus,
-          methods, results, and dated notes.
-        </p>
-        <div class="card-grid" role="list">
-          <article class="card" role="listitem">
-            <h3 class="card__title">Pond 0</h3>
-            <p class="card__text">Placeholder—link field photos, maps, and parameter tables when ready.</p>
-          </article>
-          <article class="card" role="listitem">
-            <h3 class="card__title">Pond 1</h3>
-            <p class="card__text">Placeholder.</p>
-          </article>
-          <article class="card" role="listitem">
-            <h3 class="card__title">Pond 2</h3>
-            <p class="card__text">Placeholder.</p>
-          </article>
-          <article class="card" role="listitem">
-            <h3 class="card__title">Pond 3</h3>
-            <p class="card__text">Placeholder.</p>
-          </article>
-          <article class="card" role="listitem">
-            <h3 class="card__title">Pond 4</h3>
-            <p class="card__text">Placeholder.</p>
-          </article>
+        <div class="section__head">
+          <p class="eyebrow">06 · Lab documentation</p>
+          <h2 id="photos-title" class="section__title">Lab plates</h2>
+          <p class="section__lead">
+            Documentation from plate setups and incubation labels. Image timestamps for this batch group on
+            <span class="metric">April 2–3, 2026</span> (local time).
+          </p>
+        </div>
+        <div class="photo-grid">
+          <figure class="shot">
+            <img
+              src="assets/photos/plate-grid.jpg"
+              width="800"
+              height="600"
+              loading="lazy"
+              alt="Several sealed petri dishes on a lab bench with handwritten labels including room temperature and trial numbers."
+            >
+            <figcaption>
+              <strong>Plate grid — membrane / filter comparison</strong>
+              Room temp series and trial labels on one bench. <span class="metric">Apr 2–3, 2026</span>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="assets/photos/blood-agar-room-temp.jpg"
+              width="800"
+              height="600"
+              loading="lazy"
+              alt="Five blood agar petri dishes with handwritten room temperature labels on a dark surface."
+            >
+            <figcaption>
+              <strong>Blood agar — room temperature set</strong>
+              Numbered replicates for room-temp incubation. <span class="metric">Apr 2–3, 2026</span>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="assets/photos/single-plate-30c.jpg"
+              width="800"
+              height="600"
+              loading="lazy"
+              alt="Single petri dish with pale medium and handwritten temperature and replicate number on the lid."
+            >
+            <figcaption>
+              <strong>Single plate — 30 °C series</strong>
+              Close-up for one replicate in the warm set. <span class="metric">Apr 2–3, 2026</span>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <img
+              src="assets/photos/held-plate-room.jpg"
+              width="800"
+              height="600"
+              loading="lazy"
+              alt="Gloved hand holding a blood agar plate with room temperature label over a phone."
+            >
+            <figcaption>
+              <strong>Held plate — room replicate</strong>
+              Documentation shot for labels and medium. <span class="metric">Apr 2–3, 2026</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <section id="team" class="section section--center">
-      <div class="wrap wrap--narrow">
-        <p class="section-kicker">People</p>
-        <h2 class="section__title">Team</h2>
-        <p class="section__lead">MESA biology cohort.</p>
-        <ul class="team-roster">
-          <li>Brenda</li>
-          <li>Ariel</li>
-          <li>Ishak</li>
-          <li>Rita</li>
-          <li>Preston</li>
-          <li>Jayven</li>
+    <section id="team" class="section" aria-labelledby="team-title">
+      <div class="wrap split">
+        <div class="split__head">
+          <p class="eyebrow">07 · People</p>
+          <h2 id="team-title" class="section__title">Team</h2>
+          <p class="section__sub">MESA biology cohort at Diablo Valley College.</p>
+        </div>
+        <div class="split__body">
+          <ul class="team-roster">
+            <li>Brenda</li>
+            <li>Ariel</li>
+            <li>Ishak</li>
+            <li>Rita</li>
+            <li>Preston</li>
+            <li>Jayven</li>
+          </ul>
+          <!-- TODO(Preston): faculty / MESA advisor name and role, if they agree to be listed. -->
+          <div class="contact" id="contact">
+            <h3 class="contact__title">Contact</h3>
+            <p>
+              The site and its source live in the project's
+              <a href="https://github.com/ShadowEsu/dvcpondresearch">GitHub repository</a>.
+            </p>
+            <!-- TODO(Preston): public contact email once approved by the faculty / MESA contact. -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources" class="section section--surface" aria-labelledby="resources-title">
+      <div class="wrap">
+        <div class="section__head">
+          <p class="eyebrow">08 · Resources</p>
+          <h2 id="resources-title" class="section__title">Resources</h2>
+          <p class="section__lead">Programs and reference reading.</p>
+        </div>
+        <ul class="resource-list">
+          <li>
+            <a href="https://www.dvc.edu/" target="_blank" rel="noopener noreferrer">Diablo Valley College</a>
+            <span>The college where the ponds and the program are based.</span>
+          </li>
+          <li>
+            <a href="https://mesa.ucop.edu/" target="_blank" rel="noopener noreferrer">California MESA (UCOP)</a>
+            <span>The statewide MESA program.</span>
+          </li>
+          <li>
+            <a href="https://www.stowers.org/organisms" target="_blank" rel="noopener noreferrer">Stowers — Organisms</a>
+            <span>An example of explaining why each research system matters.</span>
+          </li>
+          <li>
+            <a href="https://github.com/ShadowEsu/dvcpondresearch" target="_blank" rel="noopener noreferrer">Project repository</a>
+            <span>Source for this site, on GitHub.</span>
+          </li>
         </ul>
-        <p class="team-contact">
-          <strong>Contact</strong>
-          <span class="text-muted">— add public email when approved —</span>
-        </p>
-      </div>
-    </section>
-
-    <section id="resources" class="section section--tight section--center">
-      <div class="wrap wrap--narrow">
-        <h2 class="section__title">Resources</h2>
-        <p class="section__lead">Programs and reference reading.</p>
-        <div class="link-row link-row--center">
-          <a href="https://www.dvc.edu/" target="_blank" rel="noopener noreferrer">Diablo Valley College</a>
-          <a href="https://mesa.ucop.edu/" target="_blank" rel="noopener noreferrer">California MESA (UCOP)</a>
-          <a href="https://www.stowers.org/organisms" target="_blank" rel="noopener noreferrer">Stowers — Organisms</a>
-        </div>
+        <!-- TODO(Preston): add readings and any data downloads once the team decides on raw data vs summaries. -->
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap wrap--narrow text-center">
-      <p class="u-m-0">
-        <strong>DVC Pond Research</strong> — MESA pond study at Diablo Valley College.
-      </p>
-      <p class="site-footer__note">
-        Theme: edit <code>styles/site.css</code> (<code>:root</code> variables) and <code>styles/fonts.css</code> for typography.
-      </p>
+    <div class="wrap site-footer__grid">
+      <div class="site-footer__about">
+        <p class="site-footer__name">DVC Pond Research</p>
+        <p>A MESA student research project at Diablo Valley College, Pleasant Hill, California.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#methods">Methods</a>
+        <a href="#build">Incubator</a>
+        <a href="#ponds">Ponds</a>
+        <a href="#meetings">Meetings</a>
+        <a href="#team">Team</a>
+      </nav>
+      <div class="site-footer__links">
+        <a href="https://www.dvc.edu/">Diablo Valley College</a>
+        <a href="https://github.com/ShadowEsu/dvcpondresearch">Source on GitHub</a>
+      </div>
+    </div>
+    <div class="wrap site-footer__base">
+      <p>Hypotheses are labeled as hypotheses. Observations are taken from team meeting notes.</p>
     </div>
   </footer>
 </body>

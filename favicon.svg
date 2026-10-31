@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DVC Pond Research">
+  <rect width="64" height="64" rx="14" fill="#143d38"/>
+  <path d="M32 11c-7 9-12 15.6-12 21.5a12 12 0 0 0 24 0C44 26.6 39 20 32 11z" fill="#e8f1ee"/>
+  <path d="M10 46c4.5-3 8.5-3 13 0s8.5 3 13 0 8.5-3 13 0 4.5 2.2 5 2.4" fill="none" stroke="#7fc2b3" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M10 54c4.5-3 8.5-3 13 0s8.5 3 13 0 8.5-3 13 0 4.5 2.2 5 2.4" fill="none" stroke="#7fc2b3" stroke-width="3.2" stroke-linecap="round" opacity=".6"/>
+</svg>

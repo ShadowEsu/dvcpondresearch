@@ -107,7 +107,10 @@ Route names can follow your stack (e.g. `/ponds/0` vs `/pond-0`).
 
 | Item | Description |
 |------|-------------|
+| [`index.html`](./index.html) | The site: hero, about, methods, engineering (incubator build), ponds, meeting notes, lab photos, team, resources |
+| [`styles/site.css`](./styles/site.css) | Layout and theme tokens (`:root`) |
 | [`styles/fonts.css`](./styles/fonts.css) | Google Fonts and CSS variables |
+| [`assets/photos/`](./assets/photos/) | Web-compressed JPEGs; strip GPS/location metadata before committing new photos |
 | [`PLAN.md`](./PLAN.md) | Full website plan (same topics as below, in one doc) |
 
 *Planning summary last aligned with PLAN.md: April 2026.*
