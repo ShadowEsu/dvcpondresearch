@@ -928,6 +928,31 @@ strong {
   margin-bottom: clamp(72px, 9vw, 128px);
 }
 
+.wide-photo {
+  margin: 0 0 clamp(72px, 9vw, 128px);
+}
+
+.wide-photo img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  object-position: 50% 45%;
+  filter: saturate(0.85);
+}
+
+.wide-photo figcaption {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-3);
+}
+
+@media (max-width: 640px) {
+  .wide-photo img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
 .loop {
   margin: 0;
 }
