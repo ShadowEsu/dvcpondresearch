@@ -1,52 +1,15 @@
 /**
  * DVC Pond Research — typography
  *
- * HOW TO CHANGE FONTS
- * -------------------
- * 1. Pick fonts on Google Fonts and update the @import URL below (only load what you use).
- * 2. Set --font-heading and --font-body in :root to your choices.
- * 3. Optional: adjust --text-hero / --text-lead in site.css for sizes.
+ * An editorial pairing: a light, high-contrast serif for headlines and a plain grotesque for reading text,
+ * with a small monospace for labels, dates and readings.
+ * To change fonts: update the @import URL (load only what you use), then --font-heading / --font-body / --font-mono.
  */
 
-/* Source Serif 4 (headings) + Source Sans 3 (body) — neutral, readable, professional */
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap");
 
 :root {
-  /* Active fonts — swap these strings to change the look site-wide */
-  --font-heading: "Source Serif 4", Georgia, "Times New Roman", serif;
-  --font-body: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
-
-  /* Weights (match what you import above) */
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-
-  /* Optional type scale — use in site.css or components */
-  --text-step--1: 0.9375rem;
-  --text-step-0: 1rem;
-  --text-step-1: 1.125rem;
-  --text-step-2: 1.35rem;
-  --text-step-3: 1.75rem;
-}
-
-body {
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-regular);
-  font-size: var(--text-step-0);
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-heading);
-}
-
-code,
-pre,
-kbd,
-samp {
-  font-family: var(--font-mono);
+  --font-heading: "Source Serif 4", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", "Cascadia Code", monospace;
 }

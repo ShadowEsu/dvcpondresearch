@@ -12,8 +12,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DVC Pond Research — MESA student research at Diablo Valley College</title>
-  <meta name="description" content="DVC Pond Research is a MESA student research project at Diablo Valley College studying campus ponds 0–4: water chemistry, lab plates, a temperature-controlled incubator build, and dated meeting notes.">
-  <meta name="theme-color" content="#143d38">
+  <meta name="description" content="DVC Pond Research is a MESA student research project at Diablo Valley College studying campus ponds 0–4: water chemistry, lab plates, a temperature-controlled incubator and its controller, and dated meeting notes.">
+  <meta name="theme-color" content="#0c0c0b">
   <link rel="canonical" href="https://shadowesu.github.io/dvcpondresearch/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
@@ -22,10 +22,10 @@
   <meta property="og:title" content="DVC Pond Research">
   <meta property="og:description" content="How can campus ponds be made more habitable for the organisms that live there? A MESA student research project at Diablo Valley College.">
   <meta property="og:url" content="https://shadowesu.github.io/dvcpondresearch/">
-  <meta property="og:image" content="https://shadowesu.github.io/dvcpondresearch/assets/photos/build-jumper-bundle.jpg">
+  <meta property="og:image" content="https://shadowesu.github.io/dvcpondresearch/assets/photos/2026-11-20-controller-bench.jpg">
   <meta property="og:image:width" content="1600">
   <meta property="og:image:height" content="1200">
-  <meta property="og:image:alt" content="Hands holding a bundle of rainbow jumper wires at the incubator build table.">
+  <meta property="og:image:alt" content="The incubator controller prototype on a lab bench: a rotary knob, a breadboard with jumper wires, and an OLED display reading DVC POND, TARGET 30.0 C, HEAT.">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="styles/fonts.css">
@@ -58,47 +58,44 @@
 
   <main id="content">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="wrap hero__grid">
-        <div class="hero__text">
-          <p class="eyebrow">Student research · DVC MESA program</p>
-          <h1 id="hero-title" class="hero__title">How can campus ponds be made more habitable for the organisms that live there?</h1>
-          <p class="hero__tagline">
-            A <strong>MESA</strong> research thread at <strong>Diablo Valley College</strong>: pond conditions, weather, water chemistry,
-            and lab follow-up, documented clearly so we can compare sites and improve methods over time.
-          </p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#meetings">Read the meeting notes</a>
-            <a class="button" href="#build">See the incubator build</a>
-          </div>
-          <dl class="facts">
-            <div class="facts__item">
-              <dt>Sites</dt>
-              <dd>Ponds 0–4</dd>
-            </div>
-            <div class="facts__item">
-              <dt>Meetings held</dt>
-              <dd>9 <span class="facts__note">Oct 10, 2025 – Oct 30, 2026</span></dd>
-            </div>
-            <div class="facts__item">
-              <dt>Campus</dt>
-              <dd>Pleasant Hill &amp; San Ramon</dd>
-            </div>
-            <div class="facts__item">
-              <dt>Record</dt>
-              <dd>Field notes + lab plates</dd>
-            </div>
-          </dl>
+      <figure class="hero__media">
+        <img
+          src="assets/photos/2026-11-20-controller-bench.jpg"
+          width="1600"
+          height="1200"
+          fetchpriority="high"
+          alt="The incubator controller prototype on a lab bench: a rotary knob, a breadboard with jumper wires, and an OLED display reading DVC POND, TARGET 30.0 C, HEAT.">
+        <figcaption>Incubator controller prototype, Nov 20, 2026</figcaption>
+      </figure>
+      <div class="wrap hero__inner">
+        <p class="eyebrow">Student research · DVC MESA program</p>
+        <h1 id="hero-title" class="hero__title">How can campus ponds be made more <em>habitable</em> for the organisms that live there?</h1>
+        <p class="hero__tagline">
+          A MESA research project at Diablo Valley College. We measure pond conditions, weather and water chemistry,
+          culture what grows, and build our own lab equipment, and we write it all down so we can compare sites over time.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#build">See the incubator build</a>
+          <a class="button" href="#meetings">Read the meeting notes</a>
         </div>
-        <figure class="hero__figure">
-          <img
-            src="assets/photos/build-team-wiring.jpg"
-            width="1200"
-            height="1180"
-            fetchpriority="high"
-            alt="Hands holding a small component over a table with a breadboard, a blue display module, USB cables, and a foil-covered panel with heating pads."
-          >
-          <figcaption>Wiring the incubator's sensor and display electronics, Oct 30, 2026.</figcaption>
-        </figure>
+        <dl class="facts">
+          <div class="facts__item">
+            <dt>Sites</dt>
+            <dd>Ponds 0–4</dd>
+          </div>
+          <div class="facts__item">
+            <dt>Meetings logged</dt>
+            <dd>10 <span class="facts__note">Oct 10, 2025 – Nov 20, 2026</span></dd>
+          </div>
+          <div class="facts__item">
+            <dt>Campus</dt>
+            <dd>Pleasant Hill &amp; San Ramon</dd>
+          </div>
+          <div class="facts__item">
+            <dt>Record</dt>
+            <dd>Field notes, lab plates, hardware</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
@@ -108,12 +105,11 @@
           <p class="eyebrow">01 · About</p>
           <h2 id="about-title" class="section__title">About the program</h2>
         </div>
-        <div class="split__body prose">
-          <p class="section__lead">
+        <div class="split__body">
+          <p class="statement">
             This page is a working snapshot: what we are measuring, what heavy rain might do to small ponds,
-            and what we want to test next. Long term, the site can grow into a fuller archive, similar in spirit
-            to how research institutes explain <em>why</em> each system matters (see
-            <a href="https://www.stowers.org/organisms">Stowers Institute — Organisms</a> as an example of that storytelling style).
+            and what we want to test next. Over time it can grow into a fuller archive that explains <em>why</em> each
+            system matters, in the spirit of <a href="https://www.stowers.org/organisms">Stowers Institute — Organisms</a>.
           </p>
           <ul class="checklist">
             <li>Share <strong>what we study</strong>, <strong>how we study it</strong>, and <strong>what we have learned</strong>.</li>
@@ -154,8 +150,8 @@
           </article>
           <article class="method">
             <h3 class="method__title">Engineering: incubator</h3>
-            <p>A temperature-controlled incubator built by the engineering team: a styrofoam cooler with heating pads, TMP36 temperature sensors, an OLED display, and an Arduino Nano.</p>
-            <p class="method__source">Notes: <a href="#m-2026-10-16">Oct 16</a>, <a href="#m-2026-10-30">Oct 30, 2026</a> · <a href="#build">Parts and photos</a></p>
+            <p>A temperature-controlled incubator built by the engineering team: a styrofoam cooler with heating pads, TMP36 temperature sensors, an OLED display, a rotary knob, and an Arduino Nano switching the pads through a relay.</p>
+            <p class="method__source">Notes: <a href="#m-2026-10-16">Oct 16</a>, <a href="#m-2026-10-30">Oct 30</a>, <a href="#m-2026-11-20">Nov 20, 2026</a> · <a href="#build">Build</a></p>
           </article>
         </div>
       </div>
@@ -165,43 +161,227 @@
       <div class="wrap">
         <div class="section__head">
           <p class="eyebrow">03 · Engineering</p>
-          <h2 id="build-title" class="section__title">Engineering: a temperature-controlled incubator</h2>
+          <h2 id="build-title" class="section__title">A temperature-controlled incubator, built by students</h2>
           <p class="section__lead">
-            The engineering team is building a temperature-controlled incubator for the pond work: a styrofoam cooler
-            warmed by heating pads, with temperature sensors, a display, and knobs to set the temperature.
+            The engineering team is building an incubator for the pond cultures: a styrofoam cooler warmed by heating pads,
+            with a temperature sensor, a display, and a knob to set the temperature. An Arduino Nano runs it.
           </p>
         </div>
+
+        <div class="feature">
+          <figure class="feature__media">
+            <a href="assets/photos/2026-11-20-display-target.jpg">
+              <img src="assets/photos/2026-11-20-display-target.jpg" width="1200" height="1600" loading="lazy"
+                alt="Close-up of the OLED display reading DVC POND, a current temperature of about 21 degrees C, TARGET 30.0 C, and a highlighted HEAT label.">
+            </a>
+            <figcaption>The controller's display: current temperature, the 30.0&nbsp;°C target, and the HEAT indicator. Nov 20, 2026.</figcaption>
+          </figure>
+          <div class="feature__text">
+            <p class="label">Latest · Nov 20, 2026</p>
+            <h3 class="feature__title">The controller comes together</h3>
+            <p>
+              At the Nov 20 meeting the team wired the incubator's controller on the bench. The display now reads the
+              room's temperature against a set target, a rotary knob sits on the breadboard to change that target, and a
+              5&nbsp;V relay module is wired in to switch the heating pads. The 12&nbsp;V adapter lead was cut open and stripped so it
+              can feed the pads.
+            </p>
+            <dl class="readout">
+              <div><dt>Current</dt><dd>21.1&nbsp;°C (room)</dd></div>
+              <div><dt>Target</dt><dd>30.0&nbsp;°C</dd></div>
+              <div><dt>Output</dt><dd>HEAT</dd></div>
+              <div><dt>Controller</dt><dd>Arduino Nano</dd></div>
+              <div><dt>Switch</dt><dd>5&nbsp;V relay module</dd></div>
+            </dl>
+            <p class="method__source"><a href="#m-2026-11-20">Meeting notes, Nov 20, 2026</a></p>
+          </div>
+        </div>
+
+        <figure class="diagram" aria-labelledby="diagram-title">
+          <div class="diagram__head">
+            <h3 id="diagram-title" class="diagram__title">Wiring plan</h3>
+            <p class="label">Redrawn from the plan shown at the Nov 20 meeting</p>
+          </div>
+          <div class="diagram__scroll" tabindex="0" aria-label="Wiring plan diagram">
+          <svg viewBox="0 0 840 470" role="img" aria-labelledby="diagram-svg-title diagram-svg-desc">
+            <title id="diagram-svg-title">Incubator wiring plan</title>
+            <desc id="diagram-svg-desc">The 12 volt adapter's positive lead goes to the heating pad's positive terminal. Its negative lead goes to the relay's COM contact, and the relay's NO contact goes to the heating pad's negative terminal. The Arduino Nano's 5V, GND and D2 pins connect to the relay coil's VCC, GND and IN pins.</desc>
+            <g fill="none" stroke-width="1.5">
+              <g stroke="var(--signal)">
+                <path d="M80 120 V415 H540" />
+                <path d="M180 120 V310 H540" />
+                <path d="M770 340 V380" />
+              </g>
+              <g stroke="currentColor">
+                <path d="M590 120 V170 M680 120 V170 M770 120 V170" />
+              </g>
+              <path d="M680 240 V280" stroke="currentColor" stroke-dasharray="4 5" opacity="0.6" />
+              <g stroke="currentColor" opacity="0.55">
+                <rect x="20" y="30" width="220" height="90" />
+                <rect x="540" y="20" width="280" height="100" />
+                <rect x="540" y="170" width="280" height="70" />
+                <rect x="540" y="280" width="280" height="60" />
+                <rect x="540" y="380" width="280" height="70" />
+              </g>
+            </g>
+            <g fill="currentColor" font-size="14" letter-spacing="0.06em">
+              <text x="40" y="64">12V ADAPTER</text>
+              <text x="80" y="102" text-anchor="middle">(+)</text>
+              <text x="180" y="102" text-anchor="middle">(−)</text>
+              <text x="560" y="52">ARDUINO NANO</text>
+              <text x="590" y="104" text-anchor="middle">5V</text>
+              <text x="680" y="104" text-anchor="middle">GND</text>
+              <text x="770" y="104" text-anchor="middle">D2</text>
+              <text x="560" y="198">RELAY · COIL</text>
+              <text x="590" y="228" text-anchor="middle">VCC</text>
+              <text x="680" y="228" text-anchor="middle">GND</text>
+              <text x="770" y="228" text-anchor="middle">IN</text>
+              <text x="590" y="316" text-anchor="middle">COM</text>
+              <text x="770" y="316" text-anchor="middle">NO</text>
+              <text x="560" y="408">HEATING PAD</text>
+              <text x="590" y="436" text-anchor="middle">(+)</text>
+              <text x="770" y="436" text-anchor="middle">(−)</text>
+            </g>
+            <g fill="currentColor" font-size="11" letter-spacing="0.08em" opacity="0.55">
+              <text x="96" y="400">12 V +</text>
+              <text x="196" y="296">12 V − (switched)</text>
+              <text x="692" y="266">contacts</text>
+            </g>
+          </svg>
+          </div>
+          <p class="diagram__hint">Swipe sideways to see the whole diagram →</p>
+          <ul class="diagram__legend">
+            <li><strong>Power</strong>A 12&nbsp;V adapter feeds the heating pad. Its negative side runs through the relay's COM and NO contacts.</li>
+            <li><strong>Control</strong>The Arduino Nano powers the relay coil from 5V and GND and drives its IN pin from D2.</li>
+            <li><strong>Display</strong>The OLED shows the current temperature, the target set with the knob, and a HEAT indicator.</li>
+          </ul>
+        </figure>
+
+        <div class="loops">
+          <figure class="loop">
+            <video src="assets/video/2026-11-20-strip-power-lead.mp4" poster="assets/video/2026-11-20-strip-power-lead.jpg" width="1280" height="720" autoplay muted loop playsinline preload="metadata" aria-label="Hands cutting into a power lead next to its barrel connector with a utility knife."></video>
+            <img class="loop__poster" src="assets/video/2026-11-20-strip-power-lead.jpg" width="1280" height="720" loading="lazy" alt="Hands cutting into a power lead next to its barrel connector with a utility knife.">
+            <figcaption>Opening the power lead</figcaption>
+          </figure>
+          <figure class="loop">
+            <video src="assets/video/2026-11-20-wire-relay.mp4" poster="assets/video/2026-11-20-wire-relay.jpg" width="1280" height="720" autoplay muted loop playsinline preload="metadata" aria-label="Hands holding the blue relay module with its leads, over the breadboard wiring and heating pad."></video>
+            <img class="loop__poster" src="assets/video/2026-11-20-wire-relay.jpg" width="1280" height="720" loading="lazy" alt="Hands holding the blue relay module with its leads, over the breadboard wiring and heating pad.">
+            <figcaption>Bringing the relay to the breadboard</figcaption>
+          </figure>
+          <figure class="loop">
+            <video src="assets/video/2026-11-20-relay-terminals.mp4" poster="assets/video/2026-11-20-relay-terminals.jpg" width="1280" height="720" autoplay muted loop playsinline preload="metadata" aria-label="Hands seating colored leads into a module's blue screw terminals above the heating pad."></video>
+            <img class="loop__poster" src="assets/video/2026-11-20-relay-terminals.jpg" width="1280" height="720" loading="lazy" alt="Hands seating colored leads into a module's blue screw terminals above the heating pad.">
+            <figcaption>Seating leads in the screw terminals</figcaption>
+          </figure>
+        </div>
+
         <div class="build-info">
           <article class="method">
             <h3 class="method__title">Parts</h3>
             <ul>
               <li>Styrofoam box / cooler as the body</li>
               <li>2 heating pads per box, switched by a 5V relay</li>
+              <li>12&nbsp;V power adapter for the pads</li>
               <li>TMP36 analog temperature sensors</li>
               <li>2.42-inch OLED display</li>
               <li>Arduino Nano running the sensor and display code</li>
               <li>Rotary knobs to set the temperature</li>
-              <li>Breadboards and jumper wires</li>
+              <li>Breadboards, jumper wires, wire nuts</li>
             </ul>
             <p class="method__source">From the team's parts list</p>
           </article>
           <article class="method">
             <h3 class="method__title">Status</h3>
             <ul>
-              <li><strong>Oct 16, 2026:</strong> supplies processed; sensor and display code loaded and troubleshot; wiring tested. <a href="#m-2026-10-16">Notes</a></li>
+              <li><strong>Oct 16:</strong> supplies processed; sensor and display code loaded and troubleshot; wiring tested. <a href="#m-2026-10-16">Notes</a></li>
               <li><strong>Oct 19–20:</strong> rotary knobs arrived; knob calibration still open.</li>
-              <li><strong>Oct 30, 2026:</strong> remaining supplies, including the heating pads, arrived; building started. <a href="#m-2026-10-30">Notes</a></li>
+              <li><strong>Oct 30:</strong> remaining supplies, including the heating pads, arrived; building started. <a href="#m-2026-10-30">Notes</a></li>
+              <li><strong>Nov 20:</strong> controller wired on the bench: display shows current vs target, knob and relay connected, power lead prepared. <a href="#m-2026-11-20">Notes</a></li>
             </ul>
-            <p class="method__source">Next: mount parts in the cooler and lid, pick screws and washers, try hot glue.</p>
+            <p class="method__source">Next: mount everything in the cooler and lid, as sketched on the chalkboard.</p>
           </article>
           <article class="method">
             <h3 class="method__title">Plans</h3>
             <p>Most parts were ordered in multiples, so the extra parts will become a second incubator: one for the team, and one DVC MESA pond-project incubator to give to the biology department.</p>
             <p>A separate proof-of-concept data logger, meant to be left by the water, also exists.</p>
-            <!-- TODO(Preston): link the incubator code and a wiring diagram when ready. -->
+            <!-- TODO(Preston): link the incubator code when ready. -->
           </article>
         </div>
-        <h3 class="build-photos__title">Build photos, Oct 30, 2026</h3>
+
+        <h3 class="build-photos__title">Controller build <span>Nov 20, 2026</span></h3>
+        <div class="build-grid">
+          <figure class="shot shot--wide">
+            <a href="assets/photos/2026-11-20-chalkboard-plan.jpg">
+              <img src="assets/photos/2026-11-20-chalkboard-plan.jpg" width="1600" height="1200" loading="lazy"
+                alt="Chalkboard sketch of the incubator: a laptop wired to the controller box, a relay, a thermostat display reading 21.6 C, two heating pads, and a lid layout.">
+            </a>
+            <figcaption><strong>The plan on the chalkboard</strong> Controller box, relay, thermostat display, two heating pads, and where they sit in the lid.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="assets/photos/2026-11-20-setting-target.jpg">
+              <img src="assets/photos/2026-11-20-setting-target.jpg" width="1200" height="1600" loading="lazy"
+                alt="A hand turning the rotary knob next to the breadboard and the lit OLED display.">
+            </a>
+            <figcaption><strong>Setting the target</strong> Turning the rotary knob beside the display.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="assets/photos/2026-11-20-full-circuit.jpg">
+              <img src="assets/photos/2026-11-20-full-circuit.jpg" width="1200" height="1600" loading="lazy"
+                alt="The full bench circuit: breadboard, jumper wires, relay, knob and display.">
+            </a>
+            <figcaption><strong>The bench circuit</strong> Breadboard, relay, knob and display wired together.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="assets/photos/2026-11-20-relay-module.jpg">
+              <img src="assets/photos/2026-11-20-relay-module.jpg" width="1200" height="1600" loading="lazy"
+                alt="A hand holding the blue 5 volt relay module with jumper leads attached.">
+            </a>
+            <figcaption><strong>5&nbsp;V relay module</strong> It switches the heating pads on and off.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="assets/photos/2026-11-20-relay-on.jpg">
+              <img src="assets/photos/2026-11-20-relay-on.jpg" width="1200" height="1600" loading="lazy"
+                alt="The relay module held in a hand with its status LED lit.">
+            </a>
+            <figcaption><strong>Relay powered</strong> The module's status LED is lit.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="assets/photos/2026-11-20-heating-pads.jpg">
+              <img src="assets/photos/2026-11-20-heating-pads.jpg" width="1200" height="1600" loading="lazy"
+                alt="Two amber Kapton heating pads with red leads on the lab bench, a breadboard strip and a parts bin behind them.">
+            </a>
+            <figcaption><strong>Heating pads</strong> Two Kapton pads, ready to wire to the 12&nbsp;V side.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="assets/photos/2026-11-20-terminal-screw.jpg">
+              <img src="assets/photos/2026-11-20-terminal-screw.jpg" width="1200" height="1600" loading="lazy"
+                alt="Hands working a wire into a terminal at the edge of the lab sink, with the relay module and its leads beside them.">
+            </a>
+            <figcaption><strong>Making connections</strong> Working a lead into a terminal at the bench.</figcaption>
+          </figure>
+          <figure class="shot shot--wide">
+            <a href="assets/photos/2026-11-20-rotary-encoder.jpg">
+              <img src="assets/photos/2026-11-20-rotary-encoder.jpg" width="1600" height="1200" loading="lazy"
+                alt="The rotary encoder module with its black knob, held in a hand.">
+            </a>
+            <figcaption><strong>Rotary knob</strong> The encoder used to set the incubator's target temperature.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="assets/photos/2026-11-20-wire-nuts.jpg">
+              <img src="assets/photos/2026-11-20-wire-nuts.jpg" width="1600" height="1200" loading="lazy"
+                alt="A divided box of assorted colored wire nuts.">
+            </a>
+            <figcaption><strong>Wire nuts</strong> For joining the heavier power leads.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="assets/photos/2026-11-20-controller-bench.jpg">
+              <img src="assets/photos/2026-11-20-controller-bench.jpg" width="1600" height="1200" loading="lazy"
+                alt="The controller on the bench: knob, breadboard and display reading TARGET 30.0 C and HEAT.">
+            </a>
+            <figcaption><strong>Running on the bench</strong> Target 30.0&nbsp;°C, HEAT on.</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="build-photos__title">First build session <span>Oct 30, 2026</span></h3>
         <div class="build-grid">
           <figure class="shot">
             <a href="assets/photos/build-heating-panel.jpg">
@@ -316,7 +496,35 @@
 
       <div class="split__body accordion">
 
-        <details class="accordion__item" id="m-2026-10-30" open>
+        <details class="accordion__item" id="m-2026-11-20" open>
+          <summary>
+            <span>Engineering — controller prototype and wiring plan <span class="accordion__new">New</span></span>
+            <span class="accordion__date">Nov 20, 2026</span>
+          </summary>
+          <div class="accordion__body prose">
+            <p>
+              The engineering team wired the <a href="#build">incubator's</a> controller on the bench and talked through how the
+              heating side will be powered.
+            </p>
+            <ul>
+              <li><strong>Display:</strong> the OLED reads “DVC POND”, the current temperature (about 21&nbsp;°C in the room), a <span class="metric">30.0 °C</span> target, and a HEAT indicator.</li>
+              <li><strong>Knob:</strong> a rotary encoder on the breadboard, for setting the target.</li>
+              <li><strong>Relay:</strong> the 5&nbsp;V relay module was wired up; its status LED lights when powered.</li>
+              <li><strong>Power:</strong> the 12&nbsp;V adapter's lead was cut open and stripped, and leads were seated in screw terminals. Wire nuts are on hand for the heavier joints.</li>
+              <li><strong>Wiring plan:</strong> the 12&nbsp;V supply feeds the heating pad, with its negative side switched by the relay's COM and NO contacts; the Arduino Nano drives the relay coil from 5V, GND and D2. <a href="#build">See the diagram</a>.</li>
+              <li><strong>Layout:</strong> a chalkboard sketch placed the controller box, relay, thermostat display, and two heating pads in the cooler and lid.</li>
+            </ul>
+            <div class="notes-shots">
+              <a href="#build"><img src="assets/photos/2026-11-20-display-target.jpg" width="1200" height="1600" loading="lazy" alt="The OLED display reading TARGET 30.0 C and HEAT."></a>
+              <a href="#build"><img src="assets/photos/2026-11-20-relay-on.jpg" width="1200" height="1600" loading="lazy" alt="The relay module with its status LED lit."></a>
+              <a href="#build"><img src="assets/photos/2026-11-20-chalkboard-plan.jpg" width="1600" height="1200" loading="lazy" alt="Chalkboard sketch of the incubator layout."></a>
+              <a href="#build"><img src="assets/photos/2026-11-20-setting-target.jpg" width="1200" height="1600" loading="lazy" alt="Turning the rotary knob beside the display."></a>
+            </div>
+            <p><a href="#build">Wiring diagram, build videos and all photos</a></p>
+          </div>
+        </details>
+
+        <details class="accordion__item" id="m-2026-10-30">
           <summary>
             <span>Engineering — incubator build session</span>
             <span class="accordion__date">Oct 30, 2026</span>
@@ -753,5 +961,14 @@
       <p>Hypotheses are labeled as hypotheses. Observations are taken from team meeting notes.</p>
     </div>
   </footer>
+  <script>
+    (function () {
+      var header = document.querySelector(".site-header");
+      if (!header) return;
+      var update = function () { header.classList.toggle("is-solid", window.scrollY > 24); };
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+    })();
+  </script>
 </body>
 </html>
